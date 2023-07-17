@@ -114,4 +114,8 @@ Pour etre intégrées dans un système d'information , les données doivent êtr
 Création d'un dictionnaire de données :
 
 ![Alt text](image-3-1.png)
+<br>
+### Les dépendances fonctionnelles 
+<br>
 
+Une Dépendances fonctionnelles est une relation entre deux awttributs d'une table. Elle permet de definir une relation de dépendance entre deux attributs d'une table.

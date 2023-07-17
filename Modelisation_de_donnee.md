@@ -120,7 +120,7 @@ Création d'un dictionnaire de données :
 
 Une Dépendances fonctionnelles est une relation entre deux awttributs d'une table. Elle permet de definir une relation de dépendance entre deux attributs d'une table.
 
-![Alt text](image-4-1.png) ![Alt text](image-5-1.png) ![Alt text](image-6-1.png) ![Alt text](image-7-1.png)
+![Alt text](image-14.png) ![Alt text](image-5-1.png) ![Alt text](image-6-1.png) ![Alt text](image-7-1.png)
 
 <br>
 
@@ -153,3 +153,7 @@ Petit exemple sur la cardinalité :
 - Toutes les propriétés dépendent fonctionnellement de l'identifiant
 - le nom d'une propriété ne doit apparaitre q'une seule fois dans le MCD ; si vous avez une entité Eleve et une entité Proffesseur par exemple pour un nom d'une table proffesseur il faudra l'appeler NomProffesseur.
 - Les propriétés issues d'un calcul ne doivent pas apparaitre dans le MCD
+
+## Installation d'AnalyseSI 
+
+- Installation de Java

@@ -30,7 +30,7 @@ Cette méthode se caracterise par trois points clés :
 - une séparation des données et des traitements
 - une approche nivelée
 
-    ![Alt text](image.png)
+    ![Alt text](image-1.png)
 
 Le systeme de pilotage : 
 - il est composé de l'ensemble des acteurs qui vont **piloter** le système d'information  
@@ -99,5 +99,19 @@ Ici, on apporte les solutions techniques de stockage des données.
 On repond a la question: **Comment** les traitements sont-ils efféctuées ?
 
 #### **Résumée des 4 niveaux**
+![Alt text](image-2.png)
 
+### Des données aux dépendances fonctionnelles : 
+
+Pour etre intégrées dans un système d'information , les données doivent être triées et organisées. On va souvent tenter de les classer par type de données : 
+
+- chaines de caractères, format texte
+- type alphanumérique, format texte
+- le type numérique (intégrer, float...)
+- le type date (date, datetime, timestamp)
+- logique ou bouléen (true, false)
+
+Création d'un dictionnaire de données :
+
+![Alt text](image-3-1.png)
 

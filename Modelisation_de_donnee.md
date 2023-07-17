@@ -43,7 +43,61 @@ Le système operant :
 
 ### Séparation des données et des traitements 
 
+
 La séparation des données et des traitements permet de séparer les données du système d'information et les traitements effectués sur ces données. 
 Cette démarche se fait en 3 étapes :
 - L'analyse des flux : on annalyse les flux de d'informations entre les acteurs du système d'information et les acteurs du système opérant
 - L'étude des documents interne (factures, bon de livraison etc...)
+- L'étude des documents externes (fournisseurs, clients etc...)
+
+
+Les différents types d'informations : 
+
+- les infos de bases ou élémentaires : ce sont les données de base du système d'information 
+- les infos calculées : ce sont les données calculées a partir des données de base 
+- les traitements ou les fonctions : ce sont les traitements effectués sur les données de base pour obtenir les données calculées 
+
+**En Résumé :** vous devres identifier les données et les traitements efféctués sur ces derniers.
+
+### l'approche nivelée
+
+Pour effectuer la conception d'un SI, on va utiliser une approche nivelée. Cette approche se compose de 4 niveaux :
+
+- le niveau conceptuel
+- le niveau organisationnel
+- le niveau logique 
+- le niveau physique
+
+#### **Le niveau conceptuel :**
+
+Le niveau conceptuel permet de moéliser les données de l'entreprise. On va utiliser le modèle conceptuel de données MCD pour modéliser les données de l'entreprise, et le MCT pour modéliser les traitements effectués sur ces données.
+
+#### **Le niveau organisationnel :**
+
+Le niveau organisationnel va permettre d'integrer a l'analyse précédente toutes les notions de temporalité, de chronologie des opérations, de contrainte géographique. On va utilser le modele organisationnel des traitements "MOT" et le modèle organisationnel des données "MOD" pour modéliser les traitements de l'entreprise.
+
+En resumé on se pose les questions suivantes a partir des données recueillies au niveau conceptuel :
+
+- **Quand** les traitements sont-ils effectuées ?
+- **Où** les traitements sont-ils effectuées ?
+- Par **qui** les traitements sont-ils effectués ?
+
+#### **Le niveau Logique**
+
+Le niveau logique va permettre de modéliser les données de l'entreprise en utilisatn le modèle logique de données "MLD" et les traitements de l'entreprise en utilisant le modèle logique des traitement"MLT"
+
+Le MLD et indépendant des languages de programmation et des SGBD 
+
+On répond a la qjestion : **avec quoi** les traitements sont-ils effectuées
+
+#### **Le niveau physique**
+
+Il s'agit de l'organisation `réelle` des données. On va utiliser le modèles physiques de données "MPD" et le modèle physique des traitments "MPT". 
+
+Ici, on apporte les solutions techniques de stockage des données.
+
+On repond a la question: **Comment** les traitements sont-ils efféctuées ?
+
+#### **Résumée des 4 niveaux**
+
+

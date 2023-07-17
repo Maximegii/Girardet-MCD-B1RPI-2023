@@ -119,3 +119,37 @@ Création d'un dictionnaire de données :
 <br>
 
 Une Dépendances fonctionnelles est une relation entre deux awttributs d'une table. Elle permet de definir une relation de dépendance entre deux attributs d'une table.
+
+![Alt text](image-4-1.png) ![Alt text](image-5-1.png) ![Alt text](image-6-1.png) ![Alt text](image-7-1.png)
+
+<br>
+
+### **Exercice :**
+
+Le but de l'exercice est d'élaborer un MCD a partir d'un dictionnaire de données. 
+
+Ici on va introduire les notions d'entités, de relations et de propriétés. 
+
+- #### Les propriétés sont les informations de bases d'un SI (système d'information). 
+
+![Alt text](image-10-1.png) 
+
+- #### Les entités sont les objets du SI.
+
+![Alt text](image-8-1.png) 
+
+- #### Les relations
+
+![Alt text](image-9-1.png)
+
+**Les cardinalités :** elles permettent de définir le nombre d'occurences d'une entité par rapport a une autre entité dans le cadre d'une relation. 
+
+Petit exemple sur la cardinalité :
+![Alt text](image-11-1.png) ![Alt text](image-12-1.png) ![Alt text](image-13-1.png)
+
+**Quelques règles de conceptions :**
+
+- Toutes les entitées doivent avoir un identifiant
+- Toutes les propriétés dépendent fonctionnellement de l'identifiant
+- le nom d'une propriété ne doit apparaitre q'une seule fois dans le MCD ; si vous avez une entité Eleve et une entité Proffesseur par exemple pour un nom d'une table proffesseur il faudra l'appeler NomProffesseur.
+- Les propriétés issues d'un calcul ne doivent pas apparaitre dans le MCD

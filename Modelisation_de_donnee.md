@@ -120,7 +120,45 @@ Création d'un dictionnaire de données :
 
 Une Dépendances fonctionnelles est une relation entre deux awttributs d'une table. Elle permet de definir une relation de dépendance entre deux attributs d'une table.
 
+Le role d'une dépendance fonctionnelle est de permettre de définir une relation de dépendance entre deux attributs d'une table: une donnée A depend fonctionnellement d'une donnée B lorsque la valeur de B détermine la valeur de A (par un calcul ou autre)
+
+Pour formaliser une dépendance fonctionnelle on utilise la notation suivante : `Numero adherent (Nom, prenom, code postal, ville, telephone, date d'adhesion, mail)`
+
+La partie gauche (numéro adherent) est la `source` de la dépendance fonctionnelle.
+La partie droite désigne le `but` de la dépendance 
+
+### Les dépendances fonctionnelles composées 
+
+Si une dependance fonctionnelle qui fait intervenir plus de deux attributs on parle de dépendance fonctionnelle comporsée
+
+Exemple: pour connaitre le temps d'un coureur sur une etape donnée il nous faut son numéro, son nom ainsi que le nom ou le numéro de l'étape
+
+Formalisation :
+`(numero coureur, numero etape)  (temps)`
+
+### Les dépendances fonctionnelles élémentaires
+
+une dépendance fonctionnelle A -> B est élémentaire s'il n'existe pas une donnée C, sous-ensemble de A, decrivant une dépendance fonctionnelle
+type C -> B
+
+Exemples : 
+ - RefProduit -> LibelleProduit
+ - NumCommande RefProduit -> QuantiteCommandee
+ - <strike> NumCommande RefProduite -> DesignationProduit </strike>
+
+ ### Les dépendances fonctionnelles élémentaires directes
+
+
+Exemple : 
+- RefPromo -> NumApprenant
+- NumApprenant -> NomApprenant
+- RefPromo -> NomAprrenant : RefPromo -> NumApprenant -> NomApprenant  
+
+## Sujet TP/TD MCD jour 1
+
 ![Alt text](image-14.png) ![Alt text](image-5-1.png) ![Alt text](image-6-1.png) ![Alt text](image-7-1.png)
+
+
 
 <br>
 
@@ -130,17 +168,31 @@ Le but de l'exercice est d'élaborer un MCD a partir d'un dictionnaire de donné
 
 Ici on va introduire les notions d'entités, de relations et de propriétés. 
 
-- #### Les propriétés sont les informations de bases d'un SI (système d'information). 
+ #### Les propriétés sont les informations de bases d'un SI (système d'information). 
 
 ![Alt text](image-10-1.png) 
 
-- #### Les entités sont les objets du SI.
+#### Les entités sont les objets du SI.
 
 ![Alt text](image-8-1.png) 
 
-- #### Les relations
+Quelques définitions :
+ - entité forte : une entité qui ne dépend pas d'une autre entité pour exister
+ - entité faible : une entité qui dépend d'une autre entité pour exister 
+
+#### Les relations
 
 ![Alt text](image-9-1.png)
+
+#### Les relations "porteuses"
+
+Une relation est dite porteuse si elle possede des propriétés
+img 15
+img 16
+
+#### Les relations reflexives
+
+une relation est dite reflexive si elle relie une entité 
 
 **Les cardinalités :** elles permettent de définir le nombre d'occurences d'une entité par rapport a une autre entité dans le cadre d'une relation. 
 
@@ -154,6 +206,18 @@ Petit exemple sur la cardinalité :
 - le nom d'une propriété ne doit apparaitre q'une seule fois dans le MCD ; si vous avez une entité Eleve et une entité Proffesseur par exemple pour un nom d'une table proffesseur il faudra l'appeler NomProffesseur.
 - Les propriétés issues d'un calcul ne doivent pas apparaitre dans le MCD
 
-## Installation d'AnalyseSI 
+### Installation d'AnalyseSI 
 
 - Installation de Java
+- Installation d'AnalyseSI
+
+### **Les Contraintes d'intégrité fonctionnelle (CIF)**
+Definition: Une CIF est définie par le fait qu'une des entités de l'association est completement determineée par la connaissance d'une ou de plusieur entités particiapant a l'association.
+
+Exemple : 
+img 18 
+
+Une salle peut contenir 0 ou plusieurs ordinateurs. un ordinateur, lui existe dans une seule salle.
+Dans ce type de relation une CIF existe si on a une cardinalité 1,1
+
+

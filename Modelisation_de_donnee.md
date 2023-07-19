@@ -166,6 +166,9 @@ Exemple :
 
 Le but de l'exercice est d'élaborer un MCD a partir d'un dictionnaire de données. 
 
+### Réponse exo : 
+![Alt text](TP_MCD_MENU.png)
+
 Ici on va introduire les notions d'entités, de relations et de propriétés. 
 
  #### Les propriétés sont les informations de bases d'un SI (système d'information). 
@@ -278,5 +281,130 @@ Toute relation réflexive se transformera en entité et absorbera comme clé ét
 
 Passage MLD / MCD
 
+Voici le MCD :
+
 ![Alt text](image-27.png)
+
+Voici mon MLD : 
+
+![Alt text](CONVERT_MCD_MLD.png)
+
+Voici le MLD (corrigé) :
+
+![Alt text](image-28.png)
+
+### Modele physique de données 
+
+Voici le schema relationnel correspondant au MLD precedent :
+
+Diplômes (Diplomes)
+
+Possède (#NumEmployé, #Diplôme, Date d’obtention)
+
+Employés (NumEmployé, Nom, Prénom, Adresse, Code Postal, Ville, Téléphone)
+
+Tables (NumTable, Capacité)
+
+Date (Date)
+
+Service (TypeService, Désignation)
+
+Boissons Diverses (NumBoissons, Désignation, Prix de vente)
+
+Contenir (#NumCommande, #NumBoissons, Quantité)
+
+Commande (NumCommande, #Numemployé, #Date, #TypeService, #NumTable)
+
+Comprend (#NumMenu, #NumCommande, Quantité)
+
+Menus (NumMenu, Libellé, Prix de vente)
+
+Constitué (#NumMenu, #NumPlat)
+
+Constituer (#NumCommande, #NumPlat, Quantité)
+
+Sélectionner (#NumCommande, #NumVin, Quantité)
+
+Carte des vins (NumVin, Nom du vin, Millesime, Prix de vente)
+
+Carte des plats (NumPlat, LibelléPlat, Prix de vente, #NumType)
+
+Type des plats (NumType, Désignation)
+
+Bouteilles (NumBouteille, Date Achat, Prix d’achat, # NumVin, #NumViticulteur)
+
+Viticulteur (NumViticulteur, Nom viticulteur, Prénom viticulteur, Adresse viticulteur, Code postal, Ville, Téléphone)
+
+A partir d'ici il est facile de generer le script SQL correspondant.
+
+```SQL
+CREATE TABLE CARTE_DES_VINS
+   (
+   NUMVIN INTEGER(2) NOT NULL ,
+   NOM_DU_VIN CHAR(40)   ,
+   MILLESIME INTEGER(2)  ,
+   PRIX_DE_VENTE REAL(5,2)
+,
+    PRIMARY KEY (NUMVIN) CONSTRAINT PK_CARTE_DES_VINS
+   );
+
+CREATE TABLE BOUTEILLES
+   (
+   NUMVITICULTEUR INTEGER(2) NOT NULL ,
+   NUMVIN INTEGER(2) NOT NULL ,
+   NUMBOUTEILLE INTEGER(2) NOT NULL ,
+   DATE_ACHAT DATE(8) ,
+   PRIX_D_ACHAT REAL(5,2)
+,
+    PRIMARY KEY (NUMVITICULTEUR, NUMVIN, NUMBOUTEILLE) CONSTRAINT
+PK_BOUTEILLES
+   );
+
+
+CREATE TABLE VITICULTEUR
+   (
+   NUMVITICULTEUR INTEGER(2) NOT NULL ,
+   NOM_VITICULTEUR CHAR(20) ,
+   PRÉNOM_VITICULTEUR CHAR(20) ,
+   ADRESSE_VITICULTEUR CHAR(40) ,
+   CODE_POSTAL CHAR(5) ,
+   VILLE CHAR(40) ,
+   TÉLÉPHONE CHAR(15)
+,
+    PRIMARY KEY (NUMVITICULTEUR) CONSTRAINT PK_VITICULTEUR
+   );
+```
+
+### **Exercices 19/07 après-midi :**
+
+Ennoncés dans /Exercice 19072023
+
+#### **Exercice 1 :**
+
+Voici mon MCD : 
+
+![Alt text](MCD_EXO1.png)
+
+Voici mon MLD :
+
+![Alt text](EXO1_MLD.png)
+
+Voici mon MPD :
+
+![Alt text](EXO1_MPD.png)
+
+Voici Mon schéma relationnel : 
+
+`Type_ (id_type_Type_, type_libelle_Type_)  Commande (id_commande_Commande, poid_Commande, prix_Vente_Commande)  Produits (id_produits_Produits, produits_libellés_Produits, Prix_kg_Produits, id_type_Type_)  contient (id_produits_Produits, id_commande_Commande, quantité_contient)`
+
+#### **Exercice 2 :**
+
+Voici le MLD que j'ai recréée en rétroingiénérant :
+
+![Alt text](EXO2_MLD.png)
+
+Voici le MCD que j'en ai déduit :
+
+![Alt text](EXO2_MCD.png)
+
 

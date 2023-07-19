@@ -154,7 +154,7 @@ Exemple :
 - NumApprenant -> NomApprenant
 - RefPromo -> NomAprrenant : RefPromo -> NumApprenant -> NomApprenant  
 
-## Sujet TP/TD MCD jour 1
+### Sujet TP/TD MCD jour 1
 
 ![Alt text](image-14.png) ![Alt text](image-5-1.png) ![Alt text](image-6-1.png) ![Alt text](image-7-1.png)
 
@@ -215,9 +215,68 @@ Petit exemple sur la cardinalité :
 Definition: Une CIF est définie par le fait qu'une des entités de l'association est completement determineée par la connaissance d'une ou de plusieur entités particiapant a l'association.
 
 Exemple : 
-img 18 
+![Alt text](image-18.png)
 
 Une salle peut contenir 0 ou plusieurs ordinateurs. un ordinateur, lui existe dans une seule salle.
 Dans ce type de relation une CIF existe si on a une cardinalité 1,1
 
+## Modele Logique des données (MLD)
+
+Le MLD est la suite du processus Merise, on se rapproche un peut plus de la base de données. 
+
+### Cas simple
+
+Partons du MCD suivant : 
+
+![Alt text](image-19.png)
+
+Nous arrivons au MLD suivant : 
+![Alt text](image-20.png)
+
+L'`entité` qui possede la cardinalité 1,1 ou 0,1 absorbe l'identifiant de l'entité la plus forte (0,n ou 1,n). Cet identifiant devient alors une clé étrangère. 
+
+### Cas (0,n), (0,n) ou (1,n), (1,n)
+
+Parton du MCD suivant 
+
+![Alt text](image-21.png)
+
+Dans le cas ou la `cardinalité max` est n des deux coté, on crée une entité intermédiaire qui va contenir les deux clés étrangères des deux entités 
+
+![Alt text](image-22.png)
+
+Continuons avec le MCD suivant :
+
+![Alt text](image-23.png)
+
+On optient le MLD suivant en suivant la meme logique : 
+
+![Alt text](image-24.png)
+
+### Cas d'une relation reflexive 
+
+Partons du MCD suivant :
+
+![Alt text](image-25.png)
+
+on obtient le MLD suivant : 
+
+![Alt text](image-26.png)
+
+## Regle de passage du MCD au MLD 
+
+Règles simples de passage du MCD au MLD
+L’entité qui possède la cardinalité maximale égale à 1 recevra l’identifiant ou les identifiants des entités ayant les cardinalités maximales les plus fortes.
+
+Les relations ayant toutes leurs entités reliées avec des cardinalités maximales supérieures à 1 se transformeront en entité en absorbant les identifiants des entités jointes.
+
+Toute relation porteuse de propriétés se transformera en entité et absorbera comme clé étrangère les identifiants des entités qui lui sont liées.
+
+Toute relation réflexive se transformera en entité et absorbera comme clé étrangère l’identifiant de l’entité qui lui est liée.
+
+### Exercice Pratique
+
+Passage MLD / MCD
+
+![Alt text](image-27.png)
 

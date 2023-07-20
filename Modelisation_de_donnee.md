@@ -407,4 +407,182 @@ Voici le MCD que j'en ai déduit :
 
 ![Alt text](EXO2_MCD.png)
 
+### Les Formes normales (FN)
 
+Ensemble de regles qui a pour but d'éviter les anomalies au sein des BDDR. 
+Pour appliquer les concepts des formes normales il est necessaire de connaitre les trois premières formes normales.
+
+### Forme normale 1 (1FN)
+
+Une relation est en première forme normale si : 
+- tous les attributs sont atomiques 
+- les attributs ne contiennent pas de valeurs répétitives 
+
+Exemple : 
+clients (NumCli, Nom, Prenom, Adresse, Telephone)
+
+![Alt text](image-29.png)
+
+ ![Alt text](image-30.png) 
+
+
+### Forme normale 2 (2FN)
+
+Une relation est en deuxième forme normale si :
+- Elle est en 1FN
+- Si elle a tous les attributs qui ne sont pas des clés ne dépendent pas d'une partie de la clé primaire 
+
+Exemple : 
+
+Commande (NumClient, CodeArticle, Date,QteCommande, Designation)
+
+![Alt text](image-31.png)
+
+ ![Alt text](image-32.png)
+
+### Forme normale 3 (3FN)
+
+Une relation est en troisème forme normale si : 
+
+- Elle est en deuxième forme normale 
+- Si toutes les dépendances fonctionelles sont directes 
+
+Les attributs non clés primmaire ne dépendent pas d'un attribut non clé primmaire 
+
+Exemple : 
+
+Commande (NumCommande, #CodeClient, #RefArticle)
+
+![Alt text](image-34.png)
+
+
+### Les diagrammes des flux
+
+Les diagrammes des flux permettent de modéliser les flux d'informations entre les acteurs du systeme d'information et les acteurs du systeme operant.
+
+Quelques definitions:
+
+- Domaine d'etude: le perimetre d'une activite au sein d'une entreprise, d'une activite specifique
+- L'acteur: une personne, un service, une entreprise, un systeme informatique qui intervient dans le domaine d'etude au moyen d'un flux d'information
+- les flux: les informations qui circulent entre les acteurs, represente par une fleche et porte un nom et peut etre numerote (par soucis de chronologie)
+
+Representation graphique :
+
+![Alt text](image-35.png)
+
+Quelques regles a respecter :
+
+- un flux ne peut pas etre bidirectionnel
+- un flux ne doit pas etre reflexif
+- on ne represente pas les flux entre les acteurs externes 
+
+## UML 
+
+UML:  Unified Modeling Language(language de modélisation unifié) est un langage de modelisation de données. UML a été normalisé en 1997 par L'OMG (object Management Group). Son but est de mettre en forme les concepts orientés objets au travers de diagramme. 
+
+### Analogie Merise / UML 
+
+1. Cas du MCD et du diagramme des classes
+
+Ont peut comparé certaine structure Du modèle Merise au modèle UML
+
+UML est un language graphique.
+
+MCD : img 36
+
+Diaggrame des classes : img 37
+
+Les cardinalité sont au sens opposée au MCD 
+
+Représentation d'une relation 
+
+img 38
+
+### Exercice 3 :
+Dictionnaire de données :
+- Client
+
+	   ID_Client 
+	   Nom_Client
+	   Prénom_Client
+	   Adresse_cl
+      Ville_cl
+      cp_client
+	   Tel_client
+
+- Materiel
+
+      ID_Materiel
+	   lib_materiel
+
+- Intervention
+
+	   ID_Intervention
+	   Date_int
+	   Heure_Deb_int
+	   Heure_Fin_int
+
+- Type
+
+      ID_type
+      lib_type
+      prix_horaire
+
+- Composant
+
+	   ID_Composant 
+	   Nom_Composant 
+	   Prix_Composant
+      quantité
+
+MCD du logiciel : 
+
+![Alt text](EXO3_MCD.png)
+
+MLD du logiciel :
+
+![Alt text](EXO3_MLD.png)
+
+MPD du logiciel :
+
+![Alt text](EXO3_MPD.png)
+
+shcéma relationel du logiciel :
+
+Clients (ID_client, Nom_client, Prenom_client, Adresse_cl, Ville_cl, cp_client, tel_client) 
+
+Materiels (ID_Materiel, lib_materiel) 
+
+Intervention (ID_intervention, Date_int, Heure_deb_int, Heure_fin_int, #ID_client, #ID_tyoe)
+
+type (ID_tyoe, lib_type, prix_horaire) 
+
+Composants (ID_Composant, Nom_Composant, Prix_Composant) 
+
+Appartient (ID_client, ID_Materiel, quantité_Appartient)  
+
+intervient (ID_intervention ID_Materiel)  
+
+Vend (ID_intervention, ID_Composant, quantité_Vend) 
+
+### Exercice 4 : 
+
+MCD : 
+
+![Alt text](EXO4_MCD.png)
+
+MLD :
+
+![Alt text](EXO4_MLD.png) 
+
+MPD :
+
+Propriété (ID_propriete, Type_Propriété)
+
+Location (ID_location, Type_Location, #client_id_client)  
+
+Client (ID_client, CP_maison, prenom_client, tel_client)
+
+Maison (ID_maison, Adresse_maison, Ville_maison, CP_maison, #propriété_id_propriete, #location_id_location)  
+ 
+Possede (ID_propriete, ID_client)

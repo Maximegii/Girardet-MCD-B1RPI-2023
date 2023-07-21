@@ -96,7 +96,7 @@ Horaire
 
 ## MLD :
 
-![Alt text](MLD_Hotel.png)
+![Alt text](MLD_HOTEL-1.png)
 
 ## MPD :
 
